@@ -9,9 +9,6 @@
 //Функция, которая возвращает true, если в числе содержится только один бит со значением 1, иначе - false
 bool checkNumber( unsigned int number ) {
     // Проверяем, содержится ли в числе только один бит со значением 1
-    // Сначала проверяем, не является ли число нулем,
-    // так как ноль не содержит битов со значением 1.
-    // Затем проверяем, что num & (num - 1) == 0, что оставит только один бит, если тот единственный.
     if ( number != 0 and ( number & ( number - 1 )) == 0 ) {
         return true;
     }
@@ -21,7 +18,7 @@ bool checkNumber( unsigned int number ) {
 }
 
 int main(){
-    unsigned int number;
+    unsigned int number = 0;
     std::cin >> number;
     std::cout << ( checkNumber( number ) ? "OK" : "FAIL" );
     return 0;

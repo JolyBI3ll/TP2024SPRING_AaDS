@@ -139,6 +139,6 @@ int main() {
                 assert( false );
         }
     }
-    std::cout << ( res ? "Yes" : "No" ) << std::endl;
+    std::cout << ( res ? "YES" : "NO" ) << std::endl;
     return 0;
 }

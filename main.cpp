@@ -91,30 +91,30 @@ public:
     int Dequeue();
 
 private:
-    Stack stackIn;
-    Stack stackOut;
+    Stack stIn;
+    Stack stOut;
 };
 
 Queue::~Queue() {
-    while ( !stackIn.IsEmpty() || !stackOut.IsEmpty() ) {
+    while ( !stIn.IsEmpty() || !stOut.IsEmpty() ) {
         Dequeue();
     }
 }
 
 void Queue::Enqueue( int data ) {
-    stackIn.Push( data );
+    stIn.Push( data );
 }
 
 int Queue::Dequeue() {
-    if ( stackIn.IsEmpty() && stackOut.IsEmpty() ) {
+    if ( stIn.IsEmpty() && stOut.IsEmpty() ) {
         return -1;
     }
-    if ( stackOut.IsEmpty() ) {
-        while ( !stackIn.IsEmpty() ) {
-            stackOut.Push( stackIn.Pop() );
+    if ( stOut.IsEmpty() ) {
+        while ( !stIn.IsEmpty() ) {
+            stOut.Push( stIn.Pop() );
         }
     }
-    return stackOut.Pop();
+    return stOut.Pop();
 }
 
 int main() {

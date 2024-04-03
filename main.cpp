@@ -30,7 +30,8 @@ public:
 
     IsLessByValue( IsLessByValue& ) = default;
     IsLessByValue operator=( const IsLessByValue& ) = delete;
-    bool operator()(const T& left, const T& right)
+
+    bool operator()( const T& left, const T& right )
     {
         return left.Value < right.Value;
     }
@@ -64,17 +65,21 @@ private:
 };
 
 template<class T, class IsLess>
-void MinHeap<T, IsLess>::SortedHeap() {
+void MinHeap<T, IsLess>::SortedHeap()
+{
     buildHeap();
-    for (int i = 0; i < size; ++i) {
-        for (int j = 0; j < size - 1; ++j) {
+    for ( int i = 0; i < size; ++i )
+    {
+        for ( int j = 0; j < size - 1; ++j )
+        {
             if ( isLess( buffer[j + 1], buffer[j] ) )
             {
                 std::swap( buffer[j + 1], buffer[j] );
             }
         }
     }
-    for (int i = 0; i < size; ++i) {
+    for ( int i = 0; i < size; ++i )
+    {
         std::cout << buffer[i].Id << ' ';
     }
 }
@@ -98,7 +103,8 @@ T MinHeap<T, IsLess>::ExtractMin()
     T result = buffer[0];
     buffer[0] = buffer[size - 1];
     --size;
-    if( size > 0 ) {
+    if( size > 0 )
+    {
         siftDown( 0 );
     }
     return result;
@@ -107,7 +113,8 @@ T MinHeap<T, IsLess>::ExtractMin()
 template<class T, class IsLess>
 void MinHeap<T, IsLess>::siftUp( int i )
 {
-    while( i > 0 ) {
+    while( i > 0 )
+    {
         int parent = ( i - 1 ) / 2;
         if( isLess( buffer[parent], buffer[i] ) )
             return;
@@ -117,7 +124,8 @@ void MinHeap<T, IsLess>::siftUp( int i )
 }
 
 template<class T, class IsLess>
-const T &MinHeap<T, IsLess>::PeekMin() const {
+const T &MinHeap<T, IsLess>::PeekMin() const
+{
     assert( size > 0 );
     return buffer[0];
 }
@@ -146,7 +154,8 @@ template<class T, class IsLess>
 MinHeap<T, IsLess>::MinHeap(IsLess isl): isLess( isl ), buffer( nullptr ), size( 0 ), bufferSize( 0 ) {}
 
 template<class T, class IsLess>
-int MinHeap<T, IsLess>::Size() const {
+int MinHeap<T, IsLess>::Size() const
+{
     return size;
 }
 
@@ -155,7 +164,8 @@ void MinHeap<T, IsLess>::grow()
 {
     int new_buffersize = ( bufferSize == 0 ) ? 1 : bufferSize * 2;
     T* new_buffer = new T[new_buffersize];
-    for ( int i = 0; i < bufferSize; ++i ) {
+    for ( int i = 0; i < bufferSize; ++i )
+    {
         new_buffer[i] = buffer[i];
     }
     delete[] buffer;
@@ -175,7 +185,8 @@ void MinHeap<T, IsLess>:: siftDown( int i )
             min = left;
         if( right < Size() && isLess( buffer[right], buffer[min] ) )
             min = right;
-        if( min != i ) {
+        if( min != i )
+        {
             std::swap( buffer[i], buffer[min] );
             i = min;
         }
@@ -183,21 +194,25 @@ void MinHeap<T, IsLess>:: siftDown( int i )
     }
 }
 
-int main() {
+int main()
+{
     int n = 0, k = 0;
     IsLessByValue<User> isLess;
     MinHeap<User, IsLessByValue<User>> Heap( isLess );
     User user{};
     std::cin >> n >> k;
     User* array = new User[n];
-    for (int i = 0; i < n; ++i) {
+    for ( int i = 0; i < n; ++i )
+    {
         std::cin >> user.Id >> user.Value;
         array[i] = user;
     }
-    for (int i = 0; i < k; ++i) {
+    for ( int i = 0; i < k; ++i )
+    {
         Heap.Insert( array[i] );
     }
-    for (int i = k; i < n; ++i) {
+    for ( int i = k; i < n; ++i )
+    {
         if ( isLess( Heap.PeekMin(), array[i] ) )
         {
             Heap.ExtractMin();

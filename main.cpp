@@ -20,10 +20,10 @@
 struct User {
     int Id;
     int Value;
-
+    User(): Id( 0 ), Value( 0 ) {} //Появился конструктор для инициализации полей структуры
     friend std::ostream& operator<<(std::ostream& os, const User& user)
     {
-        return os << user.Id;;
+        return os << user.Id;
     }
 };
 
@@ -183,7 +183,7 @@ int main()
     int n = 0, k = 0;
     IsLessByValue<User> isLess;
     MinHeap<User, IsLessByValue<User>> Heap( isLess );
-    User user{ 0 , 0 };
+    User user;
 
     std::cin >> n >> k;
     User* array = new User[n];

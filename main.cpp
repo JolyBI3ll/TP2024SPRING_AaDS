@@ -20,6 +20,11 @@
 struct User {
     int Id;
     int Value;
+
+    friend std::ostream& operator<<(std::ostream& os, const User& user)
+    {
+        return os << user.Id;;
+    }
 };
 
 template <class T>
@@ -51,7 +56,6 @@ public:
     T ExtractMin();
     const T& PeekMin() const;
     int Size() const;
-    void SortedHeap();
 
 private:
     IsLess isLess;
@@ -63,26 +67,6 @@ private:
     void siftUp( int i );
     void grow();
 };
-
-template<class T, class IsLess>
-void MinHeap<T, IsLess>::SortedHeap()
-{
-    buildHeap();
-    for ( int i = 0; i < size; ++i )
-    {
-        for ( int j = 0; j < size - 1; ++j )
-        {
-            if ( isLess( buffer[j + 1], buffer[j] ) )
-            {
-                std::swap( buffer[j + 1], buffer[j] );
-            }
-        }
-    }
-    for ( int i = 0; i < size; ++i )
-    {
-        std::cout << buffer[i].Id << ' ';
-    }
-}
 
 template<class T, class IsLess>
 void MinHeap<T, IsLess>::Insert( const T& element )
@@ -199,9 +183,11 @@ int main()
     int n = 0, k = 0;
     IsLessByValue<User> isLess;
     MinHeap<User, IsLessByValue<User>> Heap( isLess );
-    User user{};
+    User user{ 0 , 0 };
+
     std::cin >> n >> k;
     User* array = new User[n];
+
     for ( int i = 0; i < n; ++i )
     {
         std::cin >> user.Id >> user.Value;
@@ -219,7 +205,9 @@ int main()
             Heap.Insert( array[i] );
         }
     }
-    Heap.SortedHeap();
+    for (int i = 0; i < k; ++i) {
+        std::cout << Heap.ExtractMin() << ' ';
+    }
     delete[] array;
     return 0;
 }

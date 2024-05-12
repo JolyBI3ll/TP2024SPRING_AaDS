@@ -64,7 +64,12 @@ private:
 
 template<class T, class H>
 void HashTable<T, H>::growTable() {
-    std::vector<HashTableCell> newTable(table.size() * 2);
+    std::vector<HashTableCell> newTable;
+    if (keysCount <= (table.size() * 1) / 4) {
+        newTable.resize(table.size());
+    } else {
+        newTable.resize(table.size() * 2);
+    }
     for (unsigned int i = 0; i < table.size(); ++i) {
         if (table[i].State == Key) {
             unsigned int hash = hasher(table[i].Key) % newTable.size();
@@ -117,7 +122,6 @@ bool HashTable<T, H>::Add(const T &key) {
                 table[firstDeleted].Key = key;
                 table[firstDeleted].State = Key;
                 keysCount++;
-                emptyCount--;
                 if (emptyCount <= (table.size() * 1) / 4) {
                     growTable();
                 }

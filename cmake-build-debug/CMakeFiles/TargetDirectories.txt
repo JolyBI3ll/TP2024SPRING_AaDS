@@ -1,0 +1,3 @@
+C:/Users/asman/CLionProjects/TPSPRING2024_MODULE3_TASK2/cmake-build-debug/CMakeFiles/TPSPRING2024_MODULE3_TASK2.dir
+C:/Users/asman/CLionProjects/TPSPRING2024_MODULE3_TASK2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/asman/CLionProjects/TPSPRING2024_MODULE3_TASK2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

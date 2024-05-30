@@ -9,7 +9,6 @@ add_executable(TPSPRING2024_MODULE3_TASK1 main.cpp
         ListGraph.h
         MatrixGraph.h
         SetGraph.h
-        "IGraph .cpp"
         ListGraph.cpp
         MatrixGraph.cpp
         SetGraph.cpp

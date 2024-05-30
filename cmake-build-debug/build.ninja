@@ -55,12 +55,6 @@ build CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/main.cpp.obj: CXX_COMPILER__TPSP
   OBJECT_DIR = CMakeFiles\TPSPRING2024_MODULE3_TASK1.dir
   OBJECT_FILE_DIR = CMakeFiles\TPSPRING2024_MODULE3_TASK1.dir
 
-build CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/IGraph_.cpp.obj: CXX_COMPILER__TPSPRING2024_MODULE3_TASK1_unscanned_Debug C$:/Users/asman/CLionProjects/TPSPRING2024_MODULE3_TASK1/IGraph$ .cpp || cmake_object_order_depends_target_TPSPRING2024_MODULE3_TASK1
-  DEP_FILE = CMakeFiles\TPSPRING2024_MODULE3_TASK1.dir\IGraph_.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\TPSPRING2024_MODULE3_TASK1.dir
-  OBJECT_FILE_DIR = CMakeFiles\TPSPRING2024_MODULE3_TASK1.dir
-
 build CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/ListGraph.cpp.obj: CXX_COMPILER__TPSPRING2024_MODULE3_TASK1_unscanned_Debug C$:/Users/asman/CLionProjects/TPSPRING2024_MODULE3_TASK1/ListGraph.cpp || cmake_object_order_depends_target_TPSPRING2024_MODULE3_TASK1
   DEP_FILE = CMakeFiles\TPSPRING2024_MODULE3_TASK1.dir\ListGraph.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
@@ -93,7 +87,7 @@ build CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/ArcGraph.cpp.obj: CXX_COMPILER__
 #############################################
 # Link the executable TPSPRING2024_MODULE3_TASK1.exe
 
-build TPSPRING2024_MODULE3_TASK1.exe: CXX_EXECUTABLE_LINKER__TPSPRING2024_MODULE3_TASK1_Debug CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/main.cpp.obj CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/IGraph_.cpp.obj CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/ListGraph.cpp.obj CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/MatrixGraph.cpp.obj CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/SetGraph.cpp.obj CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/ArcGraph.cpp.obj
+build TPSPRING2024_MODULE3_TASK1.exe: CXX_EXECUTABLE_LINKER__TPSPRING2024_MODULE3_TASK1_Debug CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/main.cpp.obj CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/ListGraph.cpp.obj CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/MatrixGraph.cpp.obj CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/SetGraph.cpp.obj CMakeFiles/TPSPRING2024_MODULE3_TASK1.dir/ArcGraph.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\TPSPRING2024_MODULE3_TASK1.dir

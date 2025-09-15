@@ -1,0 +1,140 @@
+\doxysection{IGraph Interface Reference}
+\hypertarget{struct_i_graph}{}\label{struct_i_graph}\index{IGraph@{IGraph}}
+
+
+Абстрактный интерфейс для представления взвешенного графа  
+
+
+
+
+{\ttfamily \#include $<$igraph.\+h$>$}
+
+Inheritance diagram for IGraph\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_i_graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_i_graph_a97105e33bdfaca4f6bdc1777870ff941}{\texorpdfstring{$\sim$}{\string~}\+IGraph}} ()
+\item 
+virtual void \mbox{\hyperlink{struct_i_graph_ae5acce20985e142200b60ab94338f734}{Add\+Edge}} (int from, int to, int weight)=0
+\begin{DoxyCompactList}\small\item\em Добавить ребро в граф \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{struct_i_graph_ad0e7fa85f0ac364e3c024b6a14137ac9}{Vertices\+Count}} () const =0
+\begin{DoxyCompactList}\small\item\em Получить количество вершин в графе \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \mbox{\hyperlink{struct_i_graph_a3cc65360056bec6ce1a998b9834dcdea}{Get\+Next\+Vertices}} (int vertex) const =0
+\begin{DoxyCompactList}\small\item\em Получить список следующих вершин \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \mbox{\hyperlink{struct_i_graph_acabaa23bb21286c2358bbddd8fd80b67}{Get\+Prev\+Vertices}} (int vertex) const =0
+\begin{DoxyCompactList}\small\item\em Получить список предыдущих вершин \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Абстрактный интерфейс для представления взвешенного графа 
+
+Интерфейс определяет основные операции для работы с взвешенным графом. Поддерживает как ориентированные, так и неориентированные графы. 
+
+\label{doc-constructors}
+\Hypertarget{struct_i_graph_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_i_graph_a97105e33bdfaca4f6bdc1777870ff941}\index{IGraph@{IGraph}!````~IGraph@{\texorpdfstring{$\sim$}{\string~}IGraph}}
+\index{````~IGraph@{\texorpdfstring{$\sim$}{\string~}IGraph}!IGraph@{IGraph}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IGraph()}{\string~IGraph()}}
+{\footnotesize\ttfamily \label{struct_i_graph_a97105e33bdfaca4f6bdc1777870ff941} 
+virtual IGraph\+::\texorpdfstring{$\sim$}{\string~}\+IGraph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Виртуальный деструктор для корректного удаления производных классов 
+
+\label{doc-func-members}
+\Hypertarget{struct_i_graph_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_i_graph_ae5acce20985e142200b60ab94338f734}\index{IGraph@{IGraph}!AddEdge@{AddEdge}}
+\index{AddEdge@{AddEdge}!IGraph@{IGraph}}
+\doxysubsubsection{\texorpdfstring{AddEdge()}{AddEdge()}}
+{\footnotesize\ttfamily \label{struct_i_graph_ae5acce20985e142200b60ab94338f734} 
+virtual void IGraph\+::\+Add\+Edge (\begin{DoxyParamCaption}\item[{int}]{from}{, }\item[{int}]{to}{, }\item[{int}]{weight}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Добавить ребро в граф 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & Начальная вершина ребра \\
+\hline
+{\em to} & Конечная вершина ребра \\
+\hline
+{\em weight} & Вес ребра \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_lists_graph_a797ca917a014850661ae6a44282fd03e}{Lists\+Graph}}.
+
+\Hypertarget{struct_i_graph_a3cc65360056bec6ce1a998b9834dcdea}\index{IGraph@{IGraph}!GetNextVertices@{GetNextVertices}}
+\index{GetNextVertices@{GetNextVertices}!IGraph@{IGraph}}
+\doxysubsubsection{\texorpdfstring{GetNextVertices()}{GetNextVertices()}}
+{\footnotesize\ttfamily \label{struct_i_graph_a3cc65360056bec6ce1a998b9834dcdea} 
+virtual std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ IGraph\+::\+Get\+Next\+Vertices (\begin{DoxyParamCaption}\item[{int}]{vertex}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Получить список следующих вершин 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & Исходная вершина \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор пар (вершина, вес) -\/ следующие вершины и веса рёбер 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_lists_graph_a0afd3904e15b9c07690b6e90fa7c7bd8}{Lists\+Graph}}.
+
+\Hypertarget{struct_i_graph_acabaa23bb21286c2358bbddd8fd80b67}\index{IGraph@{IGraph}!GetPrevVertices@{GetPrevVertices}}
+\index{GetPrevVertices@{GetPrevVertices}!IGraph@{IGraph}}
+\doxysubsubsection{\texorpdfstring{GetPrevVertices()}{GetPrevVertices()}}
+{\footnotesize\ttfamily \label{struct_i_graph_acabaa23bb21286c2358bbddd8fd80b67} 
+virtual std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ IGraph\+::\+Get\+Prev\+Vertices (\begin{DoxyParamCaption}\item[{int}]{vertex}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Получить список предыдущих вершин 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & Целевая вершина \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор пар (вершина, вес) -\/ предыдущие вершины и веса рёбер 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_lists_graph_a789243a7d51a91c967e41b1924288d4b}{Lists\+Graph}}.
+
+\Hypertarget{struct_i_graph_ad0e7fa85f0ac364e3c024b6a14137ac9}\index{IGraph@{IGraph}!VerticesCount@{VerticesCount}}
+\index{VerticesCount@{VerticesCount}!IGraph@{IGraph}}
+\doxysubsubsection{\texorpdfstring{VerticesCount()}{VerticesCount()}}
+{\footnotesize\ttfamily \label{struct_i_graph_ad0e7fa85f0ac364e3c024b6a14137ac9} 
+virtual int IGraph\+::\+Vertices\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Получить количество вершин в графе 
+
+\begin{DoxyReturn}{Returns}
+Количество вершин 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_lists_graph_afc17a87b0fe7c774d5c205011d0eb576}{Lists\+Graph}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{igraph_8h}{igraph.\+h}}\end{DoxyCompactItemize}

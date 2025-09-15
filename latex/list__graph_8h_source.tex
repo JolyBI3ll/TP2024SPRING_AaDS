@@ -1,0 +1,30 @@
+\doxysection{list\+\_\+graph.\+h}
+\hypertarget{list__graph_8h_source}{}\label{list__graph_8h_source}\mbox{\hyperlink{list__graph_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ LISTS\_GRAPH\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ LISTS\_GRAPH\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igraph_8h}{igraph.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lists_graph_a3dc90fa63ec79a8b3d5f34858e64bba9}{ListsGraph}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_i_graph}{IGraph}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_lists_graph_a3dc90fa63ec79a8b3d5f34858e64bba9}{ListsGraph}}(\textcolor{keywordtype}{int}\ vertexCount);}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Унаследованные\ методы\ от\ IGraph}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lists_graph_a797ca917a014850661ae6a44282fd03e}{AddEdge}}(\textcolor{keywordtype}{int}\ from,\ \textcolor{keywordtype}{int}\ to,\ \textcolor{keywordtype}{int}\ weight)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_lists_graph_afc17a87b0fe7c774d5c205011d0eb576}{VerticesCount}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<std::pair<int,\ int>>\ \mbox{\hyperlink{class_lists_graph_a0afd3904e15b9c07690b6e90fa7c7bd8}{GetNextVertices}}(\textcolor{keywordtype}{int}\ vertex)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<std::pair<int,\ int>>\ \mbox{\hyperlink{class_lists_graph_a789243a7d51a91c967e41b1924288d4b}{GetPrevVertices}}(\textcolor{keywordtype}{int}\ vertex)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<std::vector<std::pair<int,\ int>>>\ adjLists;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ std::vector<std::vector<std::pair<int,\ int>>>\ prevAdjLists;\ \ \ \ }
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LISTS\_GRAPH\_H}}
+
+\end{DoxyCode}

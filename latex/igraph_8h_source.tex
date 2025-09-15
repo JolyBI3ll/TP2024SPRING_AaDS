@@ -1,0 +1,26 @@
+\doxysection{igraph.\+h}
+\hypertarget{igraph_8h_source}{}\label{igraph_8h_source}\mbox{\hyperlink{igraph_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ IGRAPH\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ IGRAPH\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_i_graph}{IGraph}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_i_graph_a97105e33bdfaca4f6bdc1777870ff941}{\string~IGraph}}()\ \{\}\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_i_graph_ae5acce20985e142200b60ab94338f734}{AddEdge}}(\textcolor{keywordtype}{int}\ from,\ \textcolor{keywordtype}{int}\ to,\ \textcolor{keywordtype}{int}\ weight)\ =\ 0;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_i_graph_ad0e7fa85f0ac364e3c024b6a14137ac9}{VerticesCount}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<std::pair<int,\ int>>\ \mbox{\hyperlink{struct_i_graph_a3cc65360056bec6ce1a998b9834dcdea}{GetNextVertices}}(\textcolor{keywordtype}{int}\ vertex)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<std::pair<int,\ int>>\ \mbox{\hyperlink{struct_i_graph_acabaa23bb21286c2358bbddd8fd80b67}{GetPrevVertices}}(\textcolor{keywordtype}{int}\ vertex)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ IGRAPH\_H}}
+
+\end{DoxyCode}

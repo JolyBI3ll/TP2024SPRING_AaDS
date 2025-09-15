@@ -1,0 +1,84 @@
+\doxysection{kruskal\+\_\+algorithm.\+h File Reference}
+\hypertarget{kruskal__algorithm_8h}{}\label{kruskal__algorithm_8h}\index{kruskal\_algorithm.h@{kruskal\_algorithm.h}}
+
+
+Алгоритм Крускала для поиска MST.  
+
+
+{\ttfamily \#include "{}igraph.\+h"{}}\newline
+{\ttfamily \#include "{}dsu.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{kruskal__algorithm_8h_af43ec73460f83bf85cbb152c5618bd8e}{Kruskal\+Algorithm}} (const \mbox{\hyperlink{struct_i_graph}{IGraph}} \&graph)
+\begin{DoxyCompactList}\small\item\em Реализация алгоритма Крускала для поиска минимального остовного дерева \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Алгоритм Крускала для поиска MST. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{kruskal__algorithm_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{kruskal__algorithm_8h_af43ec73460f83bf85cbb152c5618bd8e}\index{kruskal\_algorithm.h@{kruskal\_algorithm.h}!KruskalAlgorithm@{KruskalAlgorithm}}
+\index{KruskalAlgorithm@{KruskalAlgorithm}!kruskal\_algorithm.h@{kruskal\_algorithm.h}}
+\doxysubsubsection{\texorpdfstring{KruskalAlgorithm()}{KruskalAlgorithm()}}
+{\footnotesize\ttfamily \label{kruskal__algorithm_8h_af43ec73460f83bf85cbb152c5618bd8e} 
+int Kruskal\+Algorithm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_graph}{IGraph}} \&}]{graph}{}\end{DoxyParamCaption})}
+
+
+
+Реализация алгоритма Крускала для поиска минимального остовного дерева 
+
+Алгоритм находит минимальное остовное дерево во взвешенном неориентированном графе используя систему непересекающихся множеств для эффективной проверки циклов.
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Взвешенный неориентированный граф \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Суммарный вес минимального остовного дерева
+\end{DoxyReturn}
+@complexity O(\+E log E) где E -\/ количество рёбер в графе
+
+\begin{DoxyNote}{Note}
+Граф должен быть неориентированным и связным для корректной работы
+\end{DoxyNote}
+Реализация алгоритма Крускала для поиска минимального остовного дерева
+
+Алгоритм работает в несколько этапов\+:
+\begin{DoxyEnumerate}
+\item Сбор всех рёбер графа в список
+\item Сортировка рёбер по весу по возрастанию
+\item Последовательное добавление рёбер в MST с проверкой на циклы через \doxylink{class_d_s_u}{DSU}
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Взвешенный неориентированный граф \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Суммарный вес минимального остовного дерева
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & Если граф не связный\\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Пример\ использования:}}
+\DoxyCodeLine{\mbox{\hyperlink{class_lists_graph}{ListsGraph}}\ graph(4);}
+\DoxyCodeLine{graph.AddEdge(0,\ 1,\ 1);}
+\DoxyCodeLine{graph.AddEdge(1,\ 2,\ 2);}
+\DoxyCodeLine{graph.AddEdge(2,\ 3,\ 3);}
+\DoxyCodeLine{graph.AddEdge(0,\ 3,\ 4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ mstWeight\ =\ \mbox{\hyperlink{kruskal__algorithm_8cpp_af43ec73460f83bf85cbb152c5618bd8e}{KruskalAlgorithm}}(graph);\ \textcolor{comment}{//\ Вернет\ 6}}
+
+\end{DoxyCode}
+ 

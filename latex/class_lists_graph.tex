@@ -1,0 +1,191 @@
+\doxysection{Lists\+Graph Class Reference}
+\hypertarget{class_lists_graph}{}\label{class_lists_graph}\index{ListsGraph@{ListsGraph}}
+
+
+Реализация графа на основе списков смежности  
+
+
+
+
+{\ttfamily \#include $<$list\+\_\+graph.\+h$>$}
+
+Inheritance diagram for Lists\+Graph\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_lists_graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_lists_graph_a3dc90fa63ec79a8b3d5f34858e64bba9}{Lists\+Graph}} (int vertex\+Count)
+\begin{DoxyCompactList}\small\item\em Конструктор графа \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_lists_graph_a797ca917a014850661ae6a44282fd03e}{Add\+Edge}} (int from, int to, int weight) override
+\begin{DoxyCompactList}\small\item\em Добавить ребро в граф \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_lists_graph_afc17a87b0fe7c774d5c205011d0eb576}{Vertices\+Count}} () const override
+\begin{DoxyCompactList}\small\item\em Получить количество вершин в графе \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \mbox{\hyperlink{class_lists_graph_a0afd3904e15b9c07690b6e90fa7c7bd8}{Get\+Next\+Vertices}} (int vertex) const override
+\begin{DoxyCompactList}\small\item\em Получить список следующих вершин \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \mbox{\hyperlink{class_lists_graph_a789243a7d51a91c967e41b1924288d4b}{Get\+Prev\+Vertices}} (int vertex) const override
+\begin{DoxyCompactList}\small\item\em Получить список предыдущих вершин \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{struct_i_graph}{IGraph}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_i_graph_a97105e33bdfaca4f6bdc1777870ff941}{\texorpdfstring{$\sim$}{\string~}\+IGraph}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Реализация графа на основе списков смежности 
+
+Класс представляет взвешенный граф, используя два массива списков\+:
+\begin{DoxyItemize}
+\item Прямые списки смежности для исходящих рёбер
+\item Обратные списки смежности для входящих рёбер
+\end{DoxyItemize}
+
+@inherits \doxylink{struct_i_graph}{IGraph} 
+
+\label{doc-constructors}
+\Hypertarget{class_lists_graph_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_lists_graph_a3dc90fa63ec79a8b3d5f34858e64bba9}\index{ListsGraph@{ListsGraph}!ListsGraph@{ListsGraph}}
+\index{ListsGraph@{ListsGraph}!ListsGraph@{ListsGraph}}
+\doxysubsubsection{\texorpdfstring{ListsGraph()}{ListsGraph()}}
+{\footnotesize\ttfamily \label{class_lists_graph_a3dc90fa63ec79a8b3d5f34858e64bba9} 
+Lists\+Graph\+::\+Lists\+Graph (\begin{DoxyParamCaption}\item[{int}]{vertex\+Count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор графа 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Count} & Количество вершин в графе\\
+\hline
+\end{DoxyParams}
+Создает граф с заданным количеством вершин и инициализирует списки смежности.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Count} & Количество вершин в графе \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_lists_graph_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lists_graph_a797ca917a014850661ae6a44282fd03e}\index{ListsGraph@{ListsGraph}!AddEdge@{AddEdge}}
+\index{AddEdge@{AddEdge}!ListsGraph@{ListsGraph}}
+\doxysubsubsection{\texorpdfstring{AddEdge()}{AddEdge()}}
+{\footnotesize\ttfamily \label{class_lists_graph_a797ca917a014850661ae6a44282fd03e} 
+void Lists\+Graph\+::\+Add\+Edge (\begin{DoxyParamCaption}\item[{int}]{from}{, }\item[{int}]{to}{, }\item[{int}]{weight}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Добавить ребро в граф 
+
+Добавляет взвешенное ребро между двумя вершинами. Проверяет корректность параметров.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & Начальная вершина ребра (должна быть в диапазоне \mbox{[}0, vertex\+Count-\/1\mbox{]}) \\
+\hline
+{\em to} & Конечная вершина ребра (должна быть в диапазоне \mbox{[}0, vertex\+Count-\/1\mbox{]}) \\
+\hline
+{\em weight} & Вес ребра (должен быть неотрицательным)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & Если вершины вне допустимого диапазона \\
+\hline
+{\em std\+::invalid\+\_\+argument} & Если вес отрицательный \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{struct_i_graph_ae5acce20985e142200b60ab94338f734}{IGraph}}.
+
+\Hypertarget{class_lists_graph_a0afd3904e15b9c07690b6e90fa7c7bd8}\index{ListsGraph@{ListsGraph}!GetNextVertices@{GetNextVertices}}
+\index{GetNextVertices@{GetNextVertices}!ListsGraph@{ListsGraph}}
+\doxysubsubsection{\texorpdfstring{GetNextVertices()}{GetNextVertices()}}
+{\footnotesize\ttfamily \label{class_lists_graph_a0afd3904e15b9c07690b6e90fa7c7bd8} 
+std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ Lists\+Graph\+::\+Get\+Next\+Vertices (\begin{DoxyParamCaption}\item[{int}]{vertex}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получить список следующих вершин 
+
+Возвращает все вершины, в которые можно попасть из данной вершины, вместе с весами рёбер.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & Исходная вершина (должна быть в диапазоне \mbox{[}0, vertex\+Count-\/1\mbox{]}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор пар (вершина, вес) -\/ следующие вершины 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & Если вершина вне допустимого диапазона \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{struct_i_graph_a3cc65360056bec6ce1a998b9834dcdea}{IGraph}}.
+
+\Hypertarget{class_lists_graph_a789243a7d51a91c967e41b1924288d4b}\index{ListsGraph@{ListsGraph}!GetPrevVertices@{GetPrevVertices}}
+\index{GetPrevVertices@{GetPrevVertices}!ListsGraph@{ListsGraph}}
+\doxysubsubsection{\texorpdfstring{GetPrevVertices()}{GetPrevVertices()}}
+{\footnotesize\ttfamily \label{class_lists_graph_a789243a7d51a91c967e41b1924288d4b} 
+std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ Lists\+Graph\+::\+Get\+Prev\+Vertices (\begin{DoxyParamCaption}\item[{int}]{vertex}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получить список предыдущих вершин 
+
+Возвращает все вершины, из которых можно попасть в данную вершину, вместе с весами рёбер.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & Целевая вершина (должна быть в диапазоне \mbox{[}0, vertex\+Count-\/1\mbox{]}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор пар (вершина, вес) -\/ предыдущие вершины 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & Если вершина вне допустимого диапазона \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{struct_i_graph_acabaa23bb21286c2358bbddd8fd80b67}{IGraph}}.
+
+\Hypertarget{class_lists_graph_afc17a87b0fe7c774d5c205011d0eb576}\index{ListsGraph@{ListsGraph}!VerticesCount@{VerticesCount}}
+\index{VerticesCount@{VerticesCount}!ListsGraph@{ListsGraph}}
+\doxysubsubsection{\texorpdfstring{VerticesCount()}{VerticesCount()}}
+{\footnotesize\ttfamily \label{class_lists_graph_afc17a87b0fe7c774d5c205011d0eb576} 
+int Lists\+Graph\+::\+Vertices\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Получить количество вершин в графе 
+
+\begin{DoxyReturn}{Returns}
+Количество вершин в графе 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{struct_i_graph_ad0e7fa85f0ac364e3c024b6a14137ac9}{IGraph}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{list__graph_8h}{list\+\_\+graph.\+h}}\item 
+\mbox{\hyperlink{list__graph_8cpp}{list\+\_\+graph.\+cpp}}\end{DoxyCompactItemize}

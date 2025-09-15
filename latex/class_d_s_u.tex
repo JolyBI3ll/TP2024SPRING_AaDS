@@ -1,0 +1,117 @@
+\doxysection{DSU Class Reference}
+\hypertarget{class_d_s_u}{}\label{class_d_s_u}\index{DSU@{DSU}}
+
+
+Класс для работы с системой непересекающихся множеств  
+
+
+
+
+{\ttfamily \#include $<$dsu.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_s_u_af3f004da3ea81a87a0bd5a2ce7e7b26d}{DSU}} (int count)
+\begin{DoxyCompactList}\small\item\em Конструктор \doxylink{class_d_s_u}{DSU}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_d_s_u_a6d8bc7e8ae0e40b3a6eeb591f3b04338}{Find\+Parent}} (int v)
+\begin{DoxyCompactList}\small\item\em Найти представителя множества \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_s_u_adce52350a6367a88e865f6949037eee7}{Union}} (int v1, int v2)
+\begin{DoxyCompactList}\small\item\em Объединить два множества \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс для работы с системой непересекающихся множеств 
+
+Реализует Union-\/\+Find структуру данных с эвристикой сжатия пути и объединением по рангу для эффективной работы алгоритма Крускала. 
+
+\label{doc-constructors}
+\Hypertarget{class_d_s_u_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_s_u_af3f004da3ea81a87a0bd5a2ce7e7b26d}\index{DSU@{DSU}!DSU@{DSU}}
+\index{DSU@{DSU}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{DSU()}{DSU()}}
+{\footnotesize\ttfamily \label{class_d_s_u_af3f004da3ea81a87a0bd5a2ce7e7b26d} 
+DSU\+::\+DSU (\begin{DoxyParamCaption}\item[{int}]{count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор \doxylink{class_d_s_u}{DSU}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & Количество элементов в системе\\
+\hline
+\end{DoxyParams}
+Инициализирует систему с заданным количеством элементов. Каждый элемент изначально является родителем самому себе.
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & Количество элементов в системе \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_d_s_u_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_s_u_a6d8bc7e8ae0e40b3a6eeb591f3b04338}\index{DSU@{DSU}!FindParent@{FindParent}}
+\index{FindParent@{FindParent}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{FindParent()}{FindParent()}}
+{\footnotesize\ttfamily \label{class_d_s_u_a6d8bc7e8ae0e40b3a6eeb591f3b04338} 
+int DSU\+::\+Find\+Parent (\begin{DoxyParamCaption}\item[{int}]{v}{}\end{DoxyParamCaption})}
+
+
+
+Найти представителя множества 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Элемент, для которого ищется представитель \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Представитель множества, содержащего элемент v
+\end{DoxyReturn}
+Использует эвристику сжатия пути для оптимизации будущих запросов.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Элемент, для которого ищется представитель \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Представитель множества, содержащего элемент v 
+\end{DoxyReturn}
+\Hypertarget{class_d_s_u_adce52350a6367a88e865f6949037eee7}\index{DSU@{DSU}!Union@{Union}}
+\index{Union@{Union}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{Union()}{Union()}}
+{\footnotesize\ttfamily \label{class_d_s_u_adce52350a6367a88e865f6949037eee7} 
+void DSU\+::\+Union (\begin{DoxyParamCaption}\item[{int}]{v1}{, }\item[{int}]{v2}{}\end{DoxyParamCaption})}
+
+
+
+Объединить два множества 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & Первый элемент \\
+\hline
+{\em v2} & Второй элемент\\
+\hline
+\end{DoxyParams}
+Использует эвристику объединения по рангу для поддержания эффективной структуры деревьев.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & Первый элемент \\
+\hline
+{\em v2} & Второй элемент \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dsu_8h}{dsu.\+h}}\item 
+\mbox{\hyperlink{dsu_8cpp}{dsu.\+cpp}}\end{DoxyCompactItemize}

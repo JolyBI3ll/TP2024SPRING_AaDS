@@ -1,6 +1,6 @@
 var files_dup =
 [
-    [ "description.h", "description_8h_source.html", null ],
+    [ "description.h", "description_8h.html", null ],
     [ "dsu.cpp", "dsu_8cpp.html", null ],
     [ "dsu.h", "dsu_8h.html", "dsu_8h" ],
     [ "igraph.h", "igraph_8h.html", "igraph_8h" ],
